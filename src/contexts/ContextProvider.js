@@ -1,3 +1,4 @@
+import { click } from "@testing-library/user-event/dist/click";
 import React, { createContext, useContext, useState } from "react";
 
 const StateContext = createContext();
@@ -9,10 +10,23 @@ const initialState = {
 };
 
 export const ContextProvider = ({ children }) => {
-  const [activePersonal, setActivePersonal] = useState(true);
+  const [activeSection, setActiveSection] = useState(true);
+  const [isClicked, setIsClicked] = useState(initialState);
+
+  const handleClick = (clicked) => {
+    setIsClicked({ ...initialState, [clicked]: true });
+  };
 
   return (
-    <StateContext.Provider value={{ activePersonal }}>
+    <StateContext.Provider
+      value={{
+        activeSection,
+        setActiveSection,
+        isClicked,
+        setIsClicked,
+        handleClick,
+      }}
+    >
       {children}
     </StateContext.Provider>
   );

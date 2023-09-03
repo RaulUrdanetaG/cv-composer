@@ -13,7 +13,7 @@ export default function InputGroup({
     <div className="input-group flex flex-col m-1.5">
       <label htmlFor={id}>
         <span className="label-text font-semibold mr-2.5">{labelText}</span>
-        {optional && <span className="optional-text">optional</span>}
+        {optional && <span className="optional-text text-sm text-slate-500">optional</span>}
         {recommended && <span className="recommended-text text-sm text-slate-500">recommended</span>}
       </label>
 

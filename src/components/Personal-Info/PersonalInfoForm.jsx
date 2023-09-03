@@ -2,10 +2,11 @@ import React from "react";
 import InputGroup from "../InputGroups";
 
 export const PersonalInfoForm = ({ personalInfo, onChange }) => {
-  console.log(personalInfo);
   return (
-    <div className="info-section flex flex-col my-2.5 mx-0 rounded-xl bg-white px-5 py-4 shadow-xl">
-      <h5 className="section-title text-2xl mb-1.5 font-semibold">Personal Information</h5>
+    <div className="info-section flex flex-col mb-2.5 mx-0 rounded-xl bg-white px-5 py-4 shadow-xl">
+      <h5 className="section-title text-2xl mb-1.5 font-semibold flex justify-between">
+        Personal Information <i className="fa-solid fa-chevron-down"></i>
+      </h5>
       <InputGroup
         id="full-name"
         placeholder="First and last name"
