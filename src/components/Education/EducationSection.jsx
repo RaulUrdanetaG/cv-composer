@@ -1,8 +1,18 @@
 import React from "react";
 import InputGroup from "../InputGroups";
 import CollapsedForm from "../CollapsedForm";
+import Buttons from "../Buttons";
+import AddButton from "../AddButton";
 
-const EducationForm = ({ education, onChange }) => {
+const EducationForm = ({
+  education,
+  onChange,
+  onClick,
+  onCancel,
+  onDelete,
+  id,
+  arrayName,
+}) => {
   return (
     <form
       className="section-form flex flex-col"
@@ -28,7 +38,7 @@ const EducationForm = ({ education, onChange }) => {
         onChange={onChange}
         data-key="degree"
       />
-      <div className="dates-group flex">
+      <div className="dates-group flex justify-around">
         <InputGroup
           type="text"
           id="date"
@@ -58,29 +68,57 @@ const EducationForm = ({ education, onChange }) => {
         data-key="location"
         optional
       />
-      {/*   
-      <Buttons save={save} cancel={cancel} remove={remove} /> */}
+
+      <Buttons
+        remove={onDelete}
+        cancel={onCancel}
+        save={onClick}
+        id={id}
+        arrayName={arrayName}
+      />
     </form>
   );
 };
 
-const EducationSection = ({ educations, onChange }) => {
+const EducationSection = ({
+  educations,
+  onChange,
+  onHide,
+  onOpen,
+  onAdd,
+  onCancel,
+  onDelete,
+}) => {
   return (
-    <div className="education-section flex flex-col mb-2.5 mx-0 rounded-xl bg-white px-5 py-4 shadow-xl">
+    <div className="education-section flex flex-col mx-0 rounded-xl bg-white px-5 py-4 shadow-xl">
       <h5 className="section-title text-2xl mb-1.5 font-semibold flex justify-between">
-        Education <i className="fa-solid fa-chevron-down"></i>
+        Education
       </h5>
       {educations.map((education) => {
         return education.isCollapsed ? (
-          <CollapsedForm name={education.degree} isHidden={education.isHidden} key={education.id}/>
+          <CollapsedForm
+            name={education.degree}
+            isHidden={education.isHidden}
+            hideForm={onHide}
+            key={education.id}
+            id={education.id}
+            onClick={onOpen}
+            arrayName="educations"
+          />
         ) : (
           <EducationForm
             education={education}
             onChange={onChange}
+            onClick={onOpen}
+            onCancel={onCancel}
+            onDelete={onDelete}
+            id={education.id}
             key={education.id}
+            arrayName="educations"
           />
         );
       })}
+      <AddButton name="Education" addFcn={onAdd} id="educations" />
     </div>
   );
 };

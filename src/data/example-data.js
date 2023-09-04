@@ -2,33 +2,33 @@ import { v4 as uuid } from "uuid";
 
 const exampleData = {
   personalInfo: {
-    fullName: "Josephine Meyers",
-    title: "Software engineer",
-    email: "josephine.meyers@mail.co.uk",
-    phoneNumber: "+44 3245 5521 5521",
-    address: "London, UK",
+    fullName: "Jane Doe",
+    title: "Mechanical Engineer",
+    email: "jane.doe@mail.com",
+    phoneNumber: "+57 300 123 4567",
+    address: "Barranquilla, Co",
   },
 
   sections: {
     educations: [
       {
-        degree: "Bachelors in Economics",
-        schoolName: "London City University",
-        location: "New York City, US",
-        startDate: "08/2020",
-        endDate: "present",
+        degree: "Mechanical Engineer Degre",
+        schoolName: "Atlantico University",
+        location: "Barranquilla, CO",
+        startDate: "2016",
+        endDate: "2021",
         isCollapsed: true,
         isHidden: false,
         id: uuid(),
       },
       {
-        degree: "Master's Degree in Math",
+        degree: "Master's Degree in Mechanical Engineering",
         schoolName: "Hidden University",
         location: "New York City, US",
-        startDate: "08/2020",
+        startDate: "2021",
         endDate: "present",
         isCollapsed: true,
-        isHidden: true,
+        isHidden: false,
         id: uuid(),
       },
     ],

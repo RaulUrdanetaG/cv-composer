@@ -9,7 +9,7 @@ const EducationPreview = ({ education }) => {
       {education.map((edu) => {
         return !edu.isHidden ? (
           <div key={edu.id} className="flex gap-6 mx-6 my-2.5">
-            <div>
+            <div className="w-36">
               <h4 className="font-semibold">
                 {edu.startDate} - {edu.endDate}
               </h4>

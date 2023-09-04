@@ -3,9 +3,9 @@ import InputGroup from "../InputGroups";
 
 export const PersonalInfoForm = ({ personalInfo, onChange }) => {
   return (
-    <div className="info-section flex flex-col mb-2.5 mx-0 rounded-xl bg-white px-5 py-4 shadow-xl">
+    <div className="info-section flex flex-col mx-0 rounded-xl bg-white px-5 py-4 shadow-xl">
       <h5 className="section-title text-2xl mb-1.5 font-semibold flex justify-between">
-        Personal Information <i className="fa-solid fa-chevron-down"></i>
+        Personal Information
       </h5>
       <InputGroup
         id="full-name"
@@ -43,7 +43,7 @@ export const PersonalInfoForm = ({ personalInfo, onChange }) => {
         labelText="Phone Number"
         onChange={onChange}
         value={personalInfo.phoneNumber}
-        data-key="number"
+        data-key="phoneNumber"
         recommended
       />
       <InputGroup

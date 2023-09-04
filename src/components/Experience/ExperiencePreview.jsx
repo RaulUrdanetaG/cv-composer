@@ -9,7 +9,7 @@ const ExperiencePreview = ({experience}) => {
       {experience.map((exp) => {
         return !exp.isHidden ? (
           <div key={exp.id} className="flex gap-6 mx-6 my-2.5">
-            <div>
+            <div className='w-36'>
               <h4 className="font-semibold">
                 {exp.startDate} - {exp.endDate}
               </h4>
