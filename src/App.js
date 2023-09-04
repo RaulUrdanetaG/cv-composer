@@ -162,7 +162,7 @@ const App = () => {
           experience={sections.experiences}
         />
       </div>
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </div>
   );
 };

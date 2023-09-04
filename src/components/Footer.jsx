@@ -18,7 +18,7 @@ export default function Footer() {
         <h6>
           <a
             href="https://github.com/RaulUrdanetaG"
-            rel="norefrerer"
+            rel="noreferrer"
             target="_blank"
           >
             <b>Raul Urdaneta</b>
